@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidy Lite: Tiny 111 KB Windows PC Cleaner & Task Manager Alternative</title>
+<meta name="description" content="Tidy Lite is a free, open-source 111 KB Windows PC cleaner with no web engine. See which apps use your RAM and CPU, end tasks safely, find large files and clean temp files. Portable, no installer, no telemetry. Great for old or low-memory PCs.">
+<meta name="keywords" content="lightweight PC cleaner, tiny task manager alternative, disk space analyzer, free up disk space, end task, large file finder, temp file cleaner, portable, no installer, old PC, low RAM, open source, no telemetry">
+<meta name="author" content="248Tech LLC">
+<meta name="theme-color" content="#0b0c11">
+<link rel="canonical" href="https://248tech.github.io/Tidy-Lite/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website"><meta property="og:site_name" content="248Tech">
+<meta property="og:title" content="Tidy Lite: the 111 KB Windows PC cleaner">
+<meta property="og:description" content="Apps, storage and clean-up in a native 111 KB app. No web engine, no installer, no telemetry.">
+<meta property="og:url" content="https://248tech.github.io/Tidy-Lite/"><meta property="og:image" content="https://248tech.github.io/Tidy-Lite/assets/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tidy Lite: the 111 KB Windows PC cleaner">
+<meta name="twitter:description" content="Native, tiny, free. See what's eating your PC and clean it up."><meta name="twitter:image" content="https://248tech.github.io/Tidy-Lite/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tidy Lite","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"1.0.0","fileSize":"111KB","description":"Free, open-source 111 KB native Windows PC cleaner: app memory and CPU with end task, disk space scanner, Recycle Bin delete with undo, and temp file cleanup. No web engine, no telemetry.","url":"https://248tech.github.io/Tidy-Lite/","downloadUrl":"https://github.com/248Tech/Tidy-Lite/releases/latest/download/TidyLite.exe","image":"https://248tech.github.io/Tidy-Lite/assets/og.png","screenshot":"https://248tech.github.io/Tidy-Lite/assets/overview.png","license":"https://opensource.org/licenses/MIT","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"248Tech LLC","url":"https://248tech.github.io"},"isBasedOn":{"@type":"SoftwareApplication","name":"Tidy","url":"https://248tech.github.io/Tidy/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can Tidy Lite be only 111 KB?","acceptedAnswer":{"@type":"Answer","text":"It's a native WinForms app compiled with the C# compiler built into Windows. It uses the .NET Framework that Windows 10 and 11 already have, with no web engine and no third-party libraries."}},{"@type":"Question","name":"Is Tidy Lite safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. Deleted files go to the Recycle Bin with Undo, critical Windows processes and folders are protected, and it never connects to the network. The source is open on GitHub."}},{"@type":"Question","name":"Why does Windows warn me the first time?","acceptedAnswer":{"@type":"Answer","text":"The exe isn't code-signed yet, so SmartScreen doesn't recognise it. Click More info, then Run anyway, or compare its SHA-256 hash with the one published on the release."}},{"@type":"Question","name":"What is the difference between Tidy Lite and Tidy?","acceptedAnswer":{"@type":"Answer","text":"Tidy Lite covers apps, storage and clean up in 111 KB. Tidy adds a storage treemap, live graphs, a command palette and remote access from your phone."}}]}</script>
+<style>
+:root{--bg:#0b0c11;--s:#13151d;--s2:#1a1d27;--b:rgba(255,255,255,.08);--t:#eef0f7;--m:#a1a7b8;--f:#6c7286;--a:#8b7bff;--a2:#3dd6c4;--g:linear-gradient(135deg,#8b7bff,#5fa8ff 55%,#3dd6c4)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 'Segoe UI Variable Text','Segoe UI',system-ui,-apple-system,sans-serif;color:var(--t);background:radial-gradient(1100px 700px at 0% -10%,rgba(95,168,255,.18),transparent 60%),radial-gradient(900px 600px at 100% 30%,rgba(61,214,196,.10),transparent 60%),var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--t);font-size:18px}
+.brand img{width:32px;height:32px}
+nav .links{display:flex;gap:22px;font-size:14.5px}nav .links a{color:var(--m)}nav .links a:hover{color:var(--t);text-decoration:none}
+.hero{text-align:center;padding:56px 0 30px}
+.eyebrow{display:inline-block;padding:6px 14px;border-radius:99px;background:rgba(139,123,255,.12);color:#c7bfff;font-size:13.5px;font-weight:600}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.035em;margin:18px auto 16px;max-width:880px}
+.grad{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--m);max-width:700px;margin:0 auto}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:32px 0 12px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 24px;border-radius:14px;font-weight:650;font-size:16px;border:1px solid var(--b);background:var(--s2);color:var(--t);transition:transform .15s,filter .15s}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn.p{background:var(--g);border:0;color:#fff;box-shadow:0 12px 30px -10px rgba(124,108,255,.8)}
+.small{color:var(--f);font-size:13.5px}
+.shot{margin:44px auto 0;max-width:1100px;border-radius:18px;overflow:hidden;border:1px solid var(--b);box-shadow:0 40px 120px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.03)}
+.shot img{display:block;width:100%;height:auto}
+section{padding:72px 0 0}
+h2{font-size:clamp(26px,3.5vw,38px);letter-spacing:-.025em;margin:0 0 10px;text-align:center}
+.sub{color:var(--m);text-align:center;max-width:640px;margin:0 auto 36px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:18px;padding:24px}
+.card .i{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;background:rgba(139,123,255,.14);margin-bottom:14px}
+.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--m);font-size:15px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.duo figure{margin:0}.duo img{width:100%;border-radius:14px;border:1px solid var(--b);display:block}
+.duo figcaption{color:var(--m);font-size:14px;margin-top:10px;text-align:center}
+.quote{font-size:clamp(19px,2.4vw,24px);text-align:center;max-width:820px;margin:0 auto;color:var(--t)}
+.quote em{font-style:normal;color:#c7bfff}
+table{width:100%;border-collapse:collapse;background:var(--s);border:1px solid var(--b);border-radius:18px;overflow:hidden}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--b);font-size:15px}th{color:var(--m);font-weight:600;background:var(--s2)}
+td:not(:first-child),th:not(:first-child){text-align:center}tr:last-child td{border-bottom:0}
+ol.steps{counter-reset:s;list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+ol.steps li{counter-increment:s;background:var(--s);border:1px solid var(--b);border-radius:18px;padding:24px;color:var(--m)}
+ol.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--g);color:#fff;font-weight:700;margin-bottom:12px}
+ol.steps strong{color:var(--t)}
+code{background:var(--s2);padding:2px 7px;border-radius:6px;font-size:14px}
+details{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--m);margin:10px 0 0}
+footer{padding:70px 0 50px;color:var(--f);font-size:14px;text-align:center}
+@media(max-width:860px){.grid,.duo,ol.steps{grid-template-columns:1fr}nav .links a.h{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="./"><img src="assets/icon-192.png" alt="" width="32" height="32">Tidy Lite</a>
+    <div class="links"><a class="h" href="#features">Features</a><a class="h" href="#install">Install</a><a href="https://248tech.github.io/Tidy/">Tidy (full)</a><a href="https://github.com/248Tech/Tidy-Lite">GitHub</a></div>
+  </nav>
+  <header class="hero">
+    <span class="eyebrow">111 KB · Native · No web engine</span>
+    <h1>A PC cleaner smaller than <span class="grad">a single photo.</span></h1>
+    <p class="lead">Tidy Lite shows which apps are using your memory, what's filling your drive and what's safe to clean, in plain English. There's no browser engine, no runtime and no installer, so it's at home on old and low-memory PCs.</p>
+    <div class="cta">
+      <a class="btn p" href="https://github.com/248Tech/Tidy-Lite/releases/latest/download/TidyLite.exe">⬇ Download TidyLite.exe (111 KB)</a>
+      <a class="btn" href="https://github.com/248Tech/Tidy-Lite">★ View on GitHub</a>
+    </div>
+    <p class="small">Windows 10 &amp; 11 · 64-bit · portable · uses about 45 MB of memory · MIT license</p>
+    <div class="shot"><img src="assets/overview.png" alt="Tidy Lite overview with processor, memory and storage gauges" width="1102" height="752"></div>
+  </header>
+  <section id="features">
+    <h2>The essentials, with nothing extra</h2>
+    <p class="sub">Four pages, in plain English, in a native window.</p>
+    <div class="grid">
+      <div class="card"><div class="i">📊</div><h3>Overview</h3><p>Processor, memory and drive gauges with moods like “Relaxed” or “Getting full”, plus the apps using the most memory.</p></div>
+      <div class="card"><div class="i">🧩</div><h3>Apps</h3><p>Programs grouped into apps with real icons and live memory and CPU. Close politely or Force quit. Critical Windows processes are protected.</p></div>
+      <div class="card"><div class="i">💾</div><h3>Storage</h3><p>Scan any drive or folder, click into the biggest folders, and browse the biggest files. Then move them to the Recycle Bin, with Undo.</p></div>
+      <div class="card"><div class="i">✨</div><h3>Clean up</h3><p>Temp files, browser caches, crash reports, the thumbnail cache and the Recycle Bin. You see the sizes before you clean.</p></div>
+      <div class="card"><div class="i">🪶</div><h3>Really tiny</h3><p>111 KB, with no web engine or runtime to download. It uses the .NET Framework that's already part of Windows.</p></div>
+      <div class="card"><div class="i">🔒</div><h3>Completely offline</h3><p>No network access, no telemetry, no update checks. It doesn't even write a settings file.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>A closer look</h2>
+    <p class="sub">Custom-drawn, follows your Windows dark or light setting, and sharp on high-DPI screens.</p>
+    <div class="duo">
+      <figure><img src="assets/apps.png" alt="Apps page with running programs, memory bars, Close and Force quit" loading="lazy" width="1102" height="752"><figcaption>Apps: what's running and how much it uses</figcaption></figure>
+      <figure><img src="assets/storage.png" alt="Storage page with folders by size and the biggest files" loading="lazy" width="1102" height="752"><figcaption>Storage: folders by size and the biggest files</figcaption></figure>
+    </div>
+    <div class="shot" style="max-width:760px;margin-top:18px"><img src="assets/clean.png" alt="Clean up page listing temp files, browser caches and the Recycle Bin" loading="lazy" width="1102" height="752"></div>
+  </section>
+  <section id="install">
+    <h2>Install in seconds</h2>
+    <p class="sub">One 111 KB file. Run it from your Desktop or a USB stick.</p>
+    <ol class="steps">
+      <li><strong>Download</strong> <a href="https://github.com/248Tech/Tidy-Lite/releases/latest/download/TidyLite.exe">TidyLite.exe</a> from the latest release.</li>
+      <li><strong>Double-click it.</strong> There's nothing to install, and .NET Framework 4 is already built into Windows 10 and 11.</li>
+      <li><strong>If SmartScreen warns you</strong>, click <em>More info → Run anyway</em>. The app isn't code-signed yet, and SHA-256 hashes are published with each release.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Tidy Lite or Tidy?</h2>
+    <p class="sub">Want a treemap, live graphs, or to check your PC from your phone? Get the full version.</p>
+    <table>
+      <tr><th></th><th>Tidy Lite</th><th>Tidy</th></tr>
+      <tr><td>Download size</td><td><strong>111 KB</strong></td><td>13 MB</td></tr>
+      <tr><td>Memory in use</td><td><strong>~45 MB total</strong></td><td>~75 MB + WebView2</td></tr>
+      <tr><td>Apps, Close / Force quit</td><td>✅</td><td>✅</td></tr>
+      <tr><td>Storage scan, Recycle Bin + Undo</td><td>✅ lists</td><td>✅ treemap</td></tr>
+      <tr><td>Clean up</td><td>✅</td><td>✅</td></tr>
+      <tr><td>Live graphs, command palette</td><td>—</td><td>✅</td></tr>
+      <tr><td>Remote access from your phone</td><td>—</td><td>✅</td></tr>
+    </table>
+    <p class="small" style="text-align:center;margin-top:14px"><a href="https://248tech.github.io/Tidy/">See Tidy (full) →</a></p>
+  </section>
+  <section>
+    <h2>Questions</h2><p class="sub"></p>
+    <details><summary>How can Tidy Lite be only 111 KB?</summary><p>It's a native WinForms app compiled with the C# compiler built into Windows. It uses the .NET Framework that Windows 10 and 11 already have, with no web engine and no third-party libraries.</p></details>
+    <details><summary>Is Tidy Lite safe?</summary><p>Yes. Deleted files go to the Recycle Bin with Undo, critical Windows processes and folders are protected, and it never connects to the network. The source is open on GitHub.</p></details>
+    <details><summary>Why does Windows warn me the first time?</summary><p>The exe isn't code-signed yet, so SmartScreen doesn't recognise it. Click More info, then Run anyway, or compare its SHA-256 hash with the one published on the release.</p></details>
+    <details><summary>What is the difference between Tidy Lite and Tidy?</summary><p>Tidy Lite covers apps, storage and clean up in 111 KB. Tidy adds a storage treemap, live graphs, a command palette and remote access from your phone.</p></details>
+  </section>
+  <footer><p>Tidy Lite is free and open source (MIT) · made by <a href="https://248tech.github.io">248Tech</a> · <a href="https://github.com/248Tech/Tidy-Lite">Source</a> · <a href="https://github.com/248Tech/Tidy-Lite/issues">Report a bug</a> · <a href="https://248tech.github.io/Tidy/">Tidy (full)</a></p></footer>
+</div>
+</body>
+</html>

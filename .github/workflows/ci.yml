@@ -1,0 +1,24 @@
+name: build
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['site/**', '**.md']
+  pull_request:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build with the C# compiler built into Windows
+        shell: cmd
+        run: build.cmd
+      - name: Check output
+        shell: pwsh
+        run: |
+          $f = Get-Item TidyLite.exe
+          "TidyLite.exe: {0:N0} bytes" -f $f.Length
+          if ($f.Length -gt 1MB) { throw "Tidy Lite should stay tiny" }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TidyLite
+          path: TidyLite.exe

@@ -1,0 +1,2 @@
+{ "name": "Tidy Lite", "short_name": "Tidy Lite", "description": "Tiny native Windows PC cleaner", "start_url": "./", "display": "standalone", "background_color": "#0b0c11", "theme_color": "#0b0c11",
+  "icons": [ { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" }, { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" } ] }
